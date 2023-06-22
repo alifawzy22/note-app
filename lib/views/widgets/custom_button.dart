@@ -5,12 +5,10 @@ import '../../constant.dart';
 class CustomBotton extends StatelessWidget {
   final String labelButton;
   final void Function()? onTap;
-  final bool isLoading;
   const CustomBotton({
     super.key,
     required this.labelButton,
     this.onTap,
-    this.isLoading = false,
   });
 
   @override
@@ -25,22 +23,14 @@ class CustomBotton extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
         ),
         child: Center(
-          child: isLoading
-              ? const SizedBox(
-                  width: 25,
-                  height: 25,
-                  child: CircularProgressIndicator(
-                    color: Colors.black,
-                  ),
-                )
-              : Text(
-                  labelButton,
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
+          child: Text(
+            labelButton,
+            style: const TextStyle(
+              color: Colors.black,
+              fontSize: 20,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
         ),
       ),
     );

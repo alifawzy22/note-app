@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/models/note_model.dart';
 import 'package:note_app/views/edit_note_view.dart';
 
 import 'custom_column_note_item.dart';
 
 class CustomNoteItem extends StatelessWidget {
-  const CustomNoteItem({super.key});
+  const CustomNoteItem({super.key, required this.note});
+
+  final NoteModel note;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class CustomNoteItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           color: const Color.fromARGB(255, 211, 148, 14),
         ),
-        child: const CustomColumnNoteItem(),
+        child: CustomColumnNoteItem(note: note),
       ),
     );
   }
